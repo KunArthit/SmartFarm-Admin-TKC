@@ -1,0 +1,33 @@
+const locale = {
+	'Theme Designer Studio': 'สตูดิโอออกแบบธีม',
+	'Create and customize beautiful themes for your application': 'สร้างและปรับแต่งธีมที่สวยงามสำหรับแอปพลิเคชันของคุณ',
+	'Show preview': 'แสดงตัวอย่าง',
+	'Hide preview': 'ซ่อนตัวอย่าง',
+	'Reset to defaults': 'รีเซ็ตเป็นค่าเริ่มต้น',
+	Retry: 'ลองใหม่',
+	'Primary Color': 'สีหลัก',
+	'Copy color code': 'คัดลอกรหัสสี',
+	'Secondary Color': 'สีรอง',
+	'Color code': 'รหัสสี',
+	'Background Color': 'สีพื้นหลัง',
+	'Save Theme': 'บันทึกธีม',
+	'Saving Changes...': 'กำลังบันทึกการเปลี่ยนแปลง...',
+	'Theme Presets': 'รูปแบบธีมล่วงหน้า',
+	'curated themes available': 'ธีมที่คัดสรรมาแล้วพร้อมใช้งาน',
+	Active: 'ใช้งานอยู่',
+	'Refresh presets': 'รีเฟรชรูปแบบล่วงหน้า',
+	'No presets found': 'ไม่พบรูปแบบล่วงหน้า',
+	'No theme presets are available': 'ไม่มีรูปแบบธีมล่วงหน้าที่พร้อมใช้งาน',
+	No: 'ไม่มี',
+	'themes found': 'ธีมที่พบ',
+	'Refresh Presets': 'รีเฟรชรูปแบบล่วงหน้า',
+	Featured: 'แนะนำ',
+	Primary: 'หลัก',
+	Secondary: 'รอง',
+	'Currently Active': 'กำลังใช้งานอยู่',
+	'Click to apply theme': 'คลิกเพื่อใช้ธีม',
+	Created: 'สร้างเมื่อ',
+	'Saving Theme...': 'กำลังบันทึกธีม...'
+};
+
+export default locale;

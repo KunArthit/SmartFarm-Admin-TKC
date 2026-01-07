@@ -1,0 +1,18 @@
+export default {
+	endOfLine: 'auto',
+	arrowParens: 'always',
+	bracketSpacing: true,
+	jsxBracketSameLine: false,
+	printWidth: 120,
+	proseWrap: 'preserve',
+	requirePragma: false,
+	semi: true,
+	singleQuote: true,
+	tabWidth: 4,
+	trailingComma: 'none',
+	useTabs: true,
+	singleAttributePerLine: true,
+	// Additional React-specific options
+	jsxSingleQuote: true,
+	bracketSameLine: false
+};
