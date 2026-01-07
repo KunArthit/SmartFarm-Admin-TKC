@@ -1,34 +1,68 @@
+SmartFarm Admin (TKC)
+=====================
+⚙️ Installation
+----------------
+1. ติดตั้ง Bun (ถ้ายังไม่มี)
+   curl -fsSL https://bun.sh/install | bash
 
-# Fuse React Versions
-## Available Versions
-- **Fuse React ViteJs** - Single Page Application (SPA)
-  - ViteJs offers a fast development experience with its instant server start and hot module replacement, making it ideal for SPAs where quick feedback and performance are crucial.
-- **Fuse React NextJs** - Server Side Rendering (SSR)
-  - NextJs excels in SSR by providing automatic static optimization and server-side rendering capabilities, which enhance SEO and initial load performance, making it perfect for dynamic web applications.
-
-## GitHub Branches
-
-| | **ViteJs** | **NextJs** |
-|---------|------|----------|
-| **Demo** | [`vitejs-demo`](https://github.com/withinpixels/fuse-react/tree/vitejs-demo) [🌐](https://fuse-react-vitejs-demo.fusetheme.com) | [`nextjs-demo`](https://github.com/withinpixels/fuse-react/tree/nextjs-demo) [🌐](https://fuse-react-nextjs-demo.fusetheme.com) |
-| **Skeleton** | [`vitejs-skeleton`](https://github.com/withinpixels/fuse-react/tree/vitejs-skeleton) [🌐](https://fuse-react-vitejs-skeleton.fusetheme.com) | [`nextjs-skeleton`](https://github.com/withinpixels/fuse-react/tree/nextjs-skeleton) [🌐](https://fuse-react-nextjs-skeleton.fusetheme.com) |
-| **Development Demo** | [`vitejs-demo-dev`](https://github.com/withinpixels/fuse-react/tree/vitejs-demo-dev) [🌐](https://fuse-react-vitejs-demo-dev.fusetheme.com) | [`nextjs-demo-dev`](https://github.com/withinpixels/fuse-react/tree/nextjs-demo-dev) [🌐](https://fuse-react-nextjs-demo-dev.fusetheme.com) |
-| **Development Skeleton** | [`vitejs-skeleton-dev`](https://github.com/withinpixels/fuse-react/tree/vitejs-skeleton-dev) [🌐](https://fuse-react-vitejs-skeleton-dev.fusetheme.com) | [`nextjs-skeleton-dev`](https://github.com/withinpixels/fuse-react/tree/nextjs-skeleton-dev) [🌐](https://fuse-react-nextjs-skeleton-dev.fusetheme.com) |
+2. Clone โปรเจกต์และติดตั้ง dependencies
+   git clone https://github.com/<your-username>/SmartFarm-Admin-TKC.git
+   cd SmartFarm-Admin-TKC
+   bun install
 
 
-## CLI Reference Links
+🧠 Environment Variables
+-------------------------
+สร้างไฟล์ .env.local ที่ root ของโปรเจกต์ เช่น
 
-- [ViteJs CLI Documentation](https://vitejs.dev/guide/cli.html)
- 
-- [NextJs CLI Documentation](https://nextjs.org/docs/api-reference/cli)
-
-## License
-
-- [License Information](https://themeforest.net/licenses/terms/regular)
-
-## More
-
-- [Fuse Theme Official Website](https://fusetheme.com/)
+VITE_API_BASE_URL=https://api.smartfarm-tkc.com
+VITE_MAP_API_KEY=YOUR_MAP_KEY_HERE
+VITE_APP_ENV=development
 
 
-# SmartFarm-Admin-TKC
+💻 Development
+---------------
+เริ่มรันระบบแอดมินในโหมดพัฒนา:
+
+bun run dev
+
+เมื่อรันสำเร็จ จะได้ URL ดังนี้:
+- Local:   http://localhost:3000/admin/
+- Network: http://192.168.1.33:3000/admin/
+
+
+🏗️ Build for Production
+------------------------
+bun run build
+bun run preview
+
+หรือใช้บน Production Server โดย deploy ไฟล์ที่อยู่ในโฟลเดอร์ `dist/`
+
+
+🧪 Scripts
+-----------
+คำสั่ง         | คำอธิบาย
+----------------|----------------------------------
+bun run dev     | รันเซิร์ฟเวอร์โหมดพัฒนา
+bun run build   | สร้างไฟล์สำหรับ production
+bun run preview | ทดสอบ production build ในเครื่อง
+bun run lint    | ตรวจสอบ code style และ lint error
+
+
+📦 Deployment
+--------------
+สามารถ deploy ได้หลายรูปแบบ เช่น:
+
+✅ Static Hosting
+- นำโฟลเดอร์ `dist` ไปวางใน Nginx / Apache / หรือ Vercel
+
+✅ Docker
+ตัวอย่าง Dockerfile:
+
+FROM oven/bun:latest
+WORKDIR /app
+COPY . .
+RUN bun install
+RUN bun run build
+EXPOSE 3000
+CMD ["bun", "run", "preview"]
